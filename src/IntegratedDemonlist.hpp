@@ -10,22 +10,9 @@ struct IDListDemon {
     }
 };
 
-struct IDDemonPack {
-    std::string name;
-    std::string tierName;
-    std::vector<int> levels;
-    double points = 0.0;
-    int tier = 0;
-};
-
 namespace IntegratedDemonlist {
-    extern std::vector<IDListDemon> aredl;
-    extern std::vector<IDDemonPack> aredlPacks;
-    extern std::vector<IDListDemon> pemonlist;
-    extern bool aredlLoaded;
-    extern bool pemonlistLoaded;
+    extern std::vector<IDListDemon> demonlist;
+    extern bool demonlistLoaded;
 
-    void loadAREDL(geode::async::TaskHolder<geode::utils::web::WebResponse>&, geode::Function<void()>, geode::CopyableFunction<void(int)>);
-    void loadAREDLPacks(geode::async::TaskHolder<geode::utils::web::WebResponse>&, geode::Function<void()>, geode::CopyableFunction<void(int)>);
-    void loadPemonlist(geode::async::TaskHolder<geode::utils::web::WebResponse>&, geode::Function<void()>, geode::CopyableFunction<void(int)>);
+    void loadDemonlist(geode::async::TaskHolder<geode::utils::web::WebResponse>&, geode::Function<void()>, geode::CopyableFunction<void(int)>);
 }
