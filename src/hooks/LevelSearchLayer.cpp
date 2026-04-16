@@ -1,4 +1,4 @@
-#include "../classes/IDListLayer.hpp"
+#include "../classes/ITLListLayer.hpp"
 #include <Geode/modify/LevelSearchLayer.hpp>
 #include <Geode/ui/BasedButtonSprite.hpp>
 
@@ -22,6 +22,6 @@ class $modify(IDLevelSearchLayer, LevelSearchLayer) {
     }
 
     void onDemonlistLevels(CCObject* sender) {
-        CCDirector::get()->pushScene(CCTransitionFade::create(0.5f, IDListLayer::scene()));
+        CCDirector::get()->pushScene(CCTransitionFade::create(0.5f, ITLListLayer::scene()));
     }
 };

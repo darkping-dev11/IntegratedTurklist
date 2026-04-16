@@ -3,16 +3,16 @@
 #include <Geode/ui/TextInput.hpp>
 #include <Geode/utils/web.hpp>
 
-class IDListLayer : public cocos2d::CCLayer, SetIDPopupDelegate, LevelManagerDelegate {
+class ITLListLayer : public cocos2d::CCLayer, SetIDPopupDelegate, LevelManagerDelegate {
 public:
-    static IDListLayer* create();
+    static ITLListLayer* create();
     static cocos2d::CCScene* scene();
 
     void page(int);
     void keyDown(cocos2d::enumKeyCodes, double) override;
     void keyBackClicked() override;
 
-    ~IDListLayer() override;
+    ~ITLListLayer() override;
 protected:
     geode::async::TaskHolder<geode::utils::web::WebResponse> m_listener;
     GJListLayer* m_list;
