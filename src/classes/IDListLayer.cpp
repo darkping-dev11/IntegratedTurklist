@@ -30,7 +30,9 @@ CCScene* IDListLayer::scene() {
     return ret;
 }
 
-constexpr std::string_view listInfo = "";
+constexpr std::string_view listInfo = "The <cg>Turklist</c> is an <cp>ranking</c> "
+    "of all rated <cj>classic mode</c> <cr>extreme demons</c> beaten in Turkiye/Turkey.\n"
+    "It is managed by <cy>gorgun</c> and <cy>deadmino</c>.";
 
 bool IDListLayer::init() {
     if (!CCLayer::init()) return false;
