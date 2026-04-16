@@ -15,7 +15,6 @@ class $modify(IDLevelCell, LevelCell) {
     };
 
     static void onModify(ModifyBase<ModifyDerive<IDLevelCell, LevelCell>>& self) {
-        (void)self.setHookPriorityAfterPost("LevelCell::loadFromLevel", "hiimjustin000.level_size");
         jasmine::hook::modify(self.m_hooks, "LevelCell::loadFromLevel", "enable-rank");
     }
 
@@ -70,8 +69,8 @@ class $modify(IDLevelCell, LevelCell) {
         auto isWhite = dailyLevel || jasmine::setting::getValue<bool>("white-rank");
 
         auto rankTextNode = CCLabelBMFont::create(fmt::format("#{} Turklist", position).c_str(), "chatFont.fnt");
-        rankTextNode->setPosition({ 346.0f, dailyLevel ? 6.0f : 1.0f });
-        rankTextNode->setAnchorPoint({ 1.0f, 0.0f });
+        rankTextNode->setPosition({ 346.0f, m_height - 1.0f });
+        rankTextNode->setAnchorPoint({ 1.0f, 1.0f });
         rankTextNode->setScale(m_compactView ? 0.45f : 0.6f);
         auto rlc = Loader::get()->getLoadedMod("raydeeux.revisedlevelcells");
         if (rlc && rlc->getSettingValue<bool>("enabled") && rlc->getSettingValue<bool>("blendingText")) {
@@ -87,11 +86,13 @@ class $modify(IDLevelCell, LevelCell) {
         rankTextNode->setID("level-rank-label"_spr);
         m_mainLayer->addChild(rankTextNode);
 
-        if (auto levelSizeLabel = m_mainLayer->getChildByID("hiimjustin000.level_size/size-label")) {
-            levelSizeLabel->setPosition({
-                m_compactView ? 343.0f - rankTextNode->getScaledContentWidth() : 346.0f,
-                m_compactView ? 1.0f : 12.0f
-            });
+        if (auto levelIDLabel = m_mainLayer->getChildByID("cvolton.betterinfo/level-id-label")) {
+            if (m_compactView) {
+                rankTextNode->setPositionX(levelIDLabel->getPositionX() - levelIDLabel->getScaledContentWidth() - 2.0f);
+            }
+            else {
+                rankTextNode->setPositionY(levelIDLabel->getPositionY() - levelIDLabel->getScaledContentHeight());
+            }
         }
     }
 };

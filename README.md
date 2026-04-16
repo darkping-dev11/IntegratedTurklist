@@ -8,4 +8,4 @@ Integration for the [Turkish Demonlist](https://turklist.tr/demonlist).
 - Text on a demon's search box that states its position on the list (If on the list and the text is enabled in the mod settings)
 
 ## License
-This mod is licensed under the [MIT License](https://github.com/hiimjasmine00/IntegratedDemonlist/blob/master/LICENSE).
+This mod is licensed under the [MIT License](https://github.com/darkping-dev11/IntegratedTurklist/blob/main/LICENSE).

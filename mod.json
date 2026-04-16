@@ -7,9 +7,9 @@
         "ios": "2.2081"
     },
     "version": "v1.0.0",
-    "id": "hiimjustin000.integrated_turklist",
+    "id": "darkping.integrated_turklist",
     "name": "Integrated Turklist",
-    "developer": "hiimjasmine00",
+    "developers": ["darkping", "hiimjasmine00"],
     "description": "Integration for the Turkish Demonlist.",
     "resources": {
         "sprites": [
@@ -35,9 +35,9 @@
         "geode.node-ids": ">=v1.9.0"
     },
     "links": {
-        "community": "https://discord.gg/QVKmbvBXA7",
-        "source": "https://github.com/hiimjasmine00/IntegratedDemonlist",
-        "homepage": "https://www.hiimjasmine00.com"
+        "community": "https://discord.gg/xmSDbhCF",
+        "source": "https://github.com/darkping-dev11/IntegratedTurklist",
+        "homepage": "https://turklist.tr"
     },
     "tags": [
         "content",
